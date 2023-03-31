@@ -1,0 +1,22 @@
+{% extends "MusicClub/base.html" %}
+
+{% load static %}
+
+{% block main %}
+
+<main class="container">
+    <article class="blog-post">
+        <h2 class="blog-post-title mb-1">Mensajes</h2>
+        <p>Desde aquí se pueden enviar mensajes a cualquier usuario registrado</p>
+        <ul>
+        <li>El campo "Email", se utiliza para que el usuario que recibió el mensaje pueda contestarlo a esa casilla de correo electrónico</li>
+        </ul>
+    </article>
+    <hr>
+    <form method="post" enctype="multipart/form-data">
+        {% csrf_token %}
+        {{form.as_p}}
+        <input type="submit" value="Enviar">
+    </form>
+</main>
+{% endblock %}

@@ -1,0 +1,26 @@
+{% extends "MusicClub/base.html" %}
+
+{% load static %}
+
+{% block main %}
+<main class="container">
+    <div class="row g-5">
+
+        <article class="blog-post">
+            <h2 class="blog-post-title mb-1">Publicaciones</h2>
+            <p>Desde aquí se pueden cargar nuevas publicaciones a la página.</p>
+            <ul>
+            <li>El campo "Clase", se utiliza para colocar una palabra clave (Vivo o Lanzamiento) que figurará en cada publicación cuando esten todas listadas.</li>
+            <li>El campo "Fecha" será utilizado para colocar el día del evento, ya sea un "Lanzamiento" o un "Vivo", y figurará en la publicación.</li>
+            <li>El campo "Nombre Interprete" será utilizado como criterio de búsqueda. </li>
+            </ul>
+        </article>
+        <hr>
+        <form method="post" enctype="multipart/form-data">
+            {% csrf_token %}
+            {{form.as_p}}
+            <input type="submit" value="Actualizar">
+        </form>
+    </div>
+</main>
+{% endblock %}

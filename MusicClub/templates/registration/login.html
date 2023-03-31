@@ -1,0 +1,13 @@
+{% extends "MusicClub/base.html" %}
+
+{% load static %}
+
+{% block main %}
+<main class="container">
+    <form method="post" >
+        {% csrf_token %}
+        {{form.as_p}}
+        <input type="submit" value="Ingresar">
+    </form>
+</main>
+{% endblock %}
